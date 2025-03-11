@@ -1,0 +1,462 @@
+/* src/styles.css */
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #141414;
+  color: #ffffff;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  overflow-x: hidden;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+/* Header */
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #1a1a1a;
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+  box-sizing: border-box;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 0;
+  color: #ffffff;
+  flex-shrink: 0;
+}
+
+.nav {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  flex-wrap: nowrap;
+  max-width: 50%;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+.nav-link {
+  color: #e5e5e5;
+  text-decoration: none;
+  font-size: 16px;
+  transition: color 0.3s ease;
+  padding: 8px 12px;
+}
+
+.nav-link:hover {
+  color: #00b7ff;
+}
+
+.logout-btn {
+  background-color: #00b7ff;
+  color: #ffffff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+}
+
+.logout-btn:hover {
+  background-color: #0095d6;
+}
+
+/* Home */
+.home-container {
+  padding: 80px 30px 20px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.section-title {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #ffffff;
+}
+
+.loading,
+.error {
+  font-size: 18px;
+  text-align: center;
+  color: #e5e5e5;
+}
+
+.info {
+  font-size: 18px;
+  text-align: center;
+  color: #e5e5e5;
+  margin: 20px 0;
+}
+
+/* MovieList */
+.movie-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.movie-card {
+  position: relative;
+  background-color: #2a2a2a;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.movie-card:hover {
+  transform: scale(1.05);
+}
+
+.movie-poster {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.trailer-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  max-width: 300px;
+  height: 169px;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 10;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+.movie-trailer {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.movie-title {
+  font-size: 16px;
+  margin: 10px;
+  color: #ffffff;
+}
+
+/* Favorite Button (genérico e específico para MovieList) */
+.favorite-btn {
+  background: rgba(0, 0, 0, 0.7);
+  border: none;
+  color: #ffffff;
+  font-size: 20px;
+  cursor: pointer;
+  padding: 5px;
+  border-radius: 50%;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.favorite-btn:hover {
+  background: rgba(0, 0, 0, 0.9);
+}
+
+.favorite-btn.favorited {
+  color: #ffcc00;
+}
+
+/* Autenticação (Login/Register) */
+.auth-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 20px;
+  background-color: #141414;
+}
+
+.auth-title {
+  font-size: 32px;
+  font-weight: bold;
+  color: #ffffff;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.auth-form {
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  font-size: 16px;
+  color: #e5e5e5;
+  margin-bottom: 8px;
+}
+
+.auth-input {
+  width: 100%;
+  padding: 12px 15px;
+  font-size: 16px;
+  color: #ffffff;
+  background-color: #2a2a2a;
+  border: 1px solid #404040;
+  border-radius: 4px;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.auth-input:focus {
+  border-color: #00b7ff;
+}
+
+.auth-btn {
+  background-color: #00b7ff;
+  color: #ffffff;
+  padding: 12px;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.auth-btn:hover {
+  background-color: #0095d6;
+}
+
+.auth-error {
+  color: #ff4d4d;
+  font-size: 14px;
+  text-align: center;
+  margin: 10px 0;
+}
+
+.auth-link {
+  font-size: 14px;
+  color: #e5e5e5;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.link {
+  color: #00b7ff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.link:hover {
+  color: #0095d6;
+}
+
+/* MovieDetails */
+.movie-details-container {
+  padding: 80px 30px 20px;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.back-btn {
+  background-color: #404040;
+  color: #ffffff;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  margin-bottom: 20px;
+  transition: background-color 0.3s ease;
+}
+
+.back-btn:hover {
+  background-color: #606060;
+}
+
+.movie-details {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.poster-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.movie-details-poster {
+  width: 100%;
+  max-width: 300px;
+  border-radius: 8px;
+}
+
+.movie-info {
+  flex: 1;
+  min-width: 300px;
+}
+
+.movie-details-title {
+  font-size: 32px;
+  font-weight: bold;
+  margin: 0 0 20px;
+  color: #ffffff;
+}
+
+.movie-genres,
+.movie-overview,
+.movie-release,
+.movie-rating {
+  font-size: 16px;
+  color: #e5e5e5;
+  margin: 10px 0;
+}
+
+.movie-genres strong,
+.movie-overview strong,
+.movie-release strong,
+.movie-rating strong {
+  color: #ffffff;
+}
+
+/* Favorite Button específico para MovieDetails */
+.poster-container .favorite-btn {
+  background-color: #00b7ff;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 4px;
+  width: 100%;
+  max-width: 200px;
+}
+
+.poster-container .favorite-btn:hover {
+  background-color: #0095d6;
+}
+
+.poster-container .favorite-btn.favorited {
+  background-color: #ffcc00;
+  color: #141414;
+}
+
+.poster-container .favorite-btn.favorited:hover {
+  background-color: #e6b800;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    padding: 10px 20px;
+  }
+
+  .nav {
+    margin-top: 10px;
+    width: 100%;
+    justify-content: space-around;
+    max-width: none;
+  }
+
+  .nav-link {
+    font-size: 14px;
+    padding: 6px 10px;
+  }
+
+  .logout-btn {
+    padding: 6px 12px;
+    font-size: 12px;
+  }
+
+  .movie-details {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .movie-details-poster {
+    max-width: 250px;
+  }
+
+  .movie-info {
+    text-align: center;
+  }
+
+  .poster-container {
+    align-items: center;
+  }
+
+  .poster-container .favorite-btn {
+    margin: 0 auto;
+  }
+
+  .trailer-overlay {
+    max-width: 250px;
+    height: 141px;
+  }
+}
+
+/* Estilos existentes (mantenha-os) */
+
+/* Novo estilo para o contêiner do botão "Carregar Mais" */
+.load-more-container {
+  display: flex;
+  justify-content: center; /* Centraliza horizontalmente */
+  align-items: center; /* Centraliza verticalmente */
+  margin: 20px 0; /* Espaçamento superior e inferior */
+  width: 100%; /* Garante que o contêiner ocupe a largura total */
+}
+
+/* Estilo do botão "Carregar Mais" */
+.load-more-btn {
+  background-color: #e50914; /* Cor vermelha, típica de Netflix, ajuste se necessário */
+  color: #ffffff; /* Texto branco */
+  border: none;
+  padding: 12px 24px; /* Tamanho maior para destaque */
+  border-radius: 4px; /* Bordas arredondadas */
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 500; /* Negrito leve */
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Transição suave */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Sombra para profundidade */
+}
+
+.load-more-btn:hover {
+  background-color: #b20710; /* Escurece ao passar o mouse */
+  transform: scale(1.05); /* Efeito de zoom leve */
+}
+
+.load-more-btn:disabled {
+  background-color: #606060; /* Cinza quando desabilitado */
+  cursor: not-allowed;
+  transform: none; /* Remove o efeito de zoom quando desabilitado */
+}
+
+/* Responsividade (opcional, ajuste conforme necessário) */
+@media (max-width: 600px) {
+  .load-more-btn {
+    padding: 10px 16px; /* Reduz o padding em telas menores */
+    font-size: 14px;
+  }
+}
